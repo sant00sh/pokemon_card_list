@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:pokemon_card_list/core/utils/constants.dart';
+import 'package:pokemon_card_list/injection.dart' as di;
+
+import 'presentation/bindings/app_pages.dart';
 
 void main() {
+  di.init();
   runApp(const MyApp());
 }
 
@@ -9,13 +15,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Pokemon Cards',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const Placeholder(),
+    return GetMaterialApp(
+      title: AppConstants.appName,
+      debugShowCheckedModeBanner: false,
+      initialRoute: AppPages.initialPage,
+      getPages: AppPages.pages,
     );
   }
 }
