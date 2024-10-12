@@ -41,3 +41,11 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Ignore all files that start with a dot (.)
+.*
+
+# Ignore generated .g.dart, .freezed.dart and .mocks.dart files
+*.g.dart
+*.freezed.dart
+*.mocks.dart
